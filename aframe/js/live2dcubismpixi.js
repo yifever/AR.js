@@ -33,8 +33,8 @@ var LIVE2DCUBISMPIXI;
                 _this._meshes[m] = new CubismMesh(textures[_this._coreModel.drawables.textureIndices[m]], _this._coreModel.drawables.vertexPositions[m], uvs, _this._coreModel.drawables.indices[m], PIXI.DRAW_MODES.TRIANGLES);
                 _this._meshes[m].name = _this._coreModel.drawables.ids[m];
                 _this._meshes[m].scale.y *= -1;
-                _this._meshes[m].isCulling = !LIVE2DCUBISMCORE.Utils.hasIsDoubleSidedBit(_this._coreModel.drawables.constantFlags[m]);
-                if (LIVE2DCUBISMCORE.Utils.hasBlendAdditiveBit(_this._coreModel.drawables.constantFlags[m])) {
+                _this._meshes[m].isCulling = !Live2DCubismCore.Utils.hasIsDoubleSidedBit(_this._coreModel.drawables.constantFlags[m]);
+                if (Live2DCubismCore.Utils.hasBlendAdditiveBit(_this._coreModel.drawables.constantFlags[m])) {
                     if (_this._coreModel.drawables.maskCounts[m] > 0) {
                         var addFilter = new PIXI.Filter();
                         addFilter.blendMode = PIXI.BLEND_MODES.ADD;
@@ -44,7 +44,7 @@ var LIVE2DCUBISMPIXI;
                         _this._meshes[m].blendMode = PIXI.BLEND_MODES.ADD;
                     }
                 }
-                else if (LIVE2DCUBISMCORE.Utils.hasBlendMultiplicativeBit(_this._coreModel.drawables.constantFlags[m])) {
+                else if (Live2DCubismCore.Utils.hasBlendMultiplicativeBit(_this._coreModel.drawables.constantFlags[m])) {
                     if (_this._coreModel.drawables.maskCounts[m] > 0) {
                         var multiplyFilter = new PIXI.Filter();
                         multiplyFilter.blendMode = PIXI.BLEND_MODES.MULTIPLY;
@@ -134,12 +134,12 @@ var LIVE2DCUBISMPIXI;
             var sort = false;
             for (var m = 0; m < this._meshes.length; ++m) {
                 this._meshes[m].alpha = this._coreModel.drawables.opacities[m];
-                this._meshes[m].visible = LIVE2DCUBISMCORE.Utils.hasIsVisibleBit(this._coreModel.drawables.dynamicFlags[m]);
-                if (LIVE2DCUBISMCORE.Utils.hasVertexPositionsDidChangeBit(this._coreModel.drawables.dynamicFlags[m])) {
+                this._meshes[m].visible = Live2DCubismCore.Utils.hasIsVisibleBit(this._coreModel.drawables.dynamicFlags[m]);
+                if (Live2DCubismCore.Utils.hasVertexPositionsDidChangeBit(this._coreModel.drawables.dynamicFlags[m])) {
                     this._meshes[m].vertices = this._coreModel.drawables.vertexPositions[m];
                     this._meshes[m].dirtyVertex = true;
                 }
-                if (LIVE2DCUBISMCORE.Utils.hasRenderOrderDidChangeBit(this._coreModel.drawables.dynamicFlags[m])) {
+                if (Live2DCubismCore.Utils.hasRenderOrderDidChangeBit(this._coreModel.drawables.dynamicFlags[m])) {
                     sort = true;
                 }
             }
@@ -343,7 +343,7 @@ var LIVE2DCUBISMPIXI;
                 this._groups = LIVE2DCUBISMFRAMEWORK.Groups.fromModel3Json(model3Obj.data);
             loader.load(function (loader, resources) {
                 if (typeof (resources['moc']) !== "undefined")
-                    _this.setMoc(LIVE2DCUBISMCORE.Moc.fromArrayBuffer(resources['moc'].data));
+                    _this.setMoc(Live2DCubismCore.Moc.fromArrayBuffer(resources['moc'].data));
                 if (typeof (resources['texture' + 0]) !== "undefined") {
                     for (var i = 0; i < textureCount; i++)
                         _this.addTexture(i, resources['texture' + i].texture);
@@ -357,7 +357,7 @@ var LIVE2DCUBISMPIXI;
             });
         };
         ModelBuilder.prototype.build = function () {
-            var coreModel = LIVE2DCUBISMCORE.Model.fromMoc(this._moc);
+            var coreModel = Live2DCubismCore.Model.fromMoc(this._moc);
             if (coreModel == null) {
                 return null;
             }
