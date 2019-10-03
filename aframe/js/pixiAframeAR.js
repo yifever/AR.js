@@ -81,16 +81,16 @@ window.onload = function () {
 		var xhrType = { xhrType: PIXI.loaders.Resource.XHR_RESPONSE_TYPE.JSON };
 		var p1 = new Promise(function (resolve, reject) {
 			var loader = new PIXI.loaders.Loader();
-			loader.add('model3', "assets/Koharu/Koharu.model3.json", xhrType);
-			loader.add('motion1', "assets/Koharu/Koharu_01.motion3.json", xhrType);
-			loader.add('motion2', "assets/Koharu/Koharu_02.motion3.json", xhrType);
-			loader.add('motion3', "assets/Koharu/Koharu_03.motion3.json", xhrType);
-			loader.add('motion4', "assets/Koharu/Koharu_04.motion3.json", xhrType);
-			loader.add('motion5', "assets/Koharu/Koharu_05.motion3.json", xhrType);
-			loader.add('motion6', "assets/Koharu/Koharu_06.motion3.json", xhrType);
-			loader.add('motion7', "assets/Koharu/Koharu_07.motion3.json", xhrType);
-			loader.add('motion8', "assets/Koharu/Koharu_08.motion3.json", xhrType);
-			loader.add('motion9', "assets/Koharu/Koharu_09.motion3.json", xhrType);
+			loader.add('model3', "aframe/assets/Koharu/Koharu.model3.json", xhrType);
+			loader.add('motion1', "aframe/assets/Koharu/Koharu_01.motion3.json", xhrType);
+			loader.add('motion2', "aframe/assets/Koharu/Koharu_02.motion3.json", xhrType);
+			loader.add('motion3', "aframe/assets/Koharu/Koharu_03.motion3.json", xhrType);
+			loader.add('motion4', "aframe/assets/Koharu/Koharu_04.motion3.json", xhrType);
+			loader.add('motion5', "aframe/assets/Koharu/Koharu_05.motion3.json", xhrType);
+			loader.add('motion6', "aframe/assets/Koharu/Koharu_06.motion3.json", xhrType);
+			loader.add('motion7', "aframe/assets/Koharu/Koharu_07.motion3.json", xhrType);
+			loader.add('motion8', "aframe/assets/Koharu/Koharu_08.motion3.json", xhrType);
+			loader.add('motion9', "aframe/assets/Koharu/Koharu_09.motion3.json", xhrType);
 			loader.load(function (loader, resources) {
 				var builder = new LIVE2DCUBISMPIXI.ModelBuilder();
 				builder.buildFromModel3Json(loader, resources['model3'], complate);
@@ -99,16 +99,16 @@ window.onload = function () {
 		});
 		var p2 = new Promise(function (resolve, reject) {
 			var loader = new PIXI.loaders.Loader();
-			loader.add('model3', "assets/Haruto/Haruto.model3.json", xhrType);
-			loader.add('motion1', "assets/Haruto/Haruto_01.motion3.json", xhrType);
-			loader.add('motion2', "assets/Haruto/Haruto_02.motion3.json", xhrType);
-			loader.add('motion3', "assets/Haruto/Haruto_03.motion3.json", xhrType);
-			loader.add('motion4', "assets/Haruto/Haruto_04.motion3.json", xhrType);
-			loader.add('motion5', "assets/Haruto/Haruto_05.motion3.json", xhrType);
-			loader.add('motion6', "assets/Haruto/Haruto_06.motion3.json", xhrType);
-			loader.add('motion7', "assets/Haruto/Haruto_07.motion3.json", xhrType);
-			loader.add('motion8', "assets/Haruto/Haruto_08.motion3.json", xhrType);
-			loader.add('motion9', "assets/Haruto/Haruto_09.motion3.json", xhrType);
+			loader.add('model3', "aframe/assets/Haruto/Haruto.model3.json", xhrType);
+			loader.add('motion1', "aframe/assets/Haruto/Haruto_01.motion3.json", xhrType);
+			loader.add('motion2', "aframe/assets/Haruto/Haruto_02.motion3.json", xhrType);
+			loader.add('motion3', "aframe/assets/Haruto/Haruto_03.motion3.json", xhrType);
+			loader.add('motion4', "aframe/assets/Haruto/Haruto_04.motion3.json", xhrType);
+			loader.add('motion5', "aframe/assets/Haruto/Haruto_05.motion3.json", xhrType);
+			loader.add('motion6', "aframe/assets/Haruto/Haruto_06.motion3.json", xhrType);
+			loader.add('motion7', "aframe/assets/Haruto/Haruto_07.motion3.json", xhrType);
+			loader.add('motion8', "aframe/assets/Haruto/Haruto_08.motion3.json", xhrType);
+			loader.add('motion9', "aframe/assets/Haruto/Haruto_09.motion3.json", xhrType);
 			loader.load(function (loader, resources) {
 				var builder = new LIVE2DCUBISMPIXI.ModelBuilder();
 				builder.buildFromModel3Json(loader, resources['model3'], complate);
